@@ -10,6 +10,12 @@ function App(){
         setInputText(newValue);
     }
 
+    function addItems(){
+        setItems( (prevItems) => {
+            return [...prevItems, inputText];
+        })
+    }
+
     return (
             <div className="container">
             <div className="heading">
@@ -17,7 +23,7 @@ function App(){
             </div>
             <div className="form">
                 <input onChange={handleChane} type="text" value={inputText} />
-                <button>
+                <button onClick={addItems}>
                 <span>Add</span>
                 </button>
             </div>
