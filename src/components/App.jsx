@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ToDoItem from "./ToDoItem";
 
 function App(){
 
@@ -19,20 +20,23 @@ function App(){
 
     return (
             <div className="container">
-            <div className="heading">
-                <h1>To-Do List</h1>
-            </div>
-            <div className="form">
-                <input onChange={handleChane} type="text" value={inputText} />
-                <button onClick={addItems}>
-                <span>Add</span>
-                </button>
-            </div>
-            <div>
-                <ul>
-                {items.map((item) => <li>{item}</li>)}
-                </ul>
-            </div>
+                <div className="heading">
+                    <h1>To-Do List</h1>
+                </div>
+                <div className="form">
+                    <input onChange={handleChane} type="text" value={inputText} />
+                    <button onClick={addItems}>
+                    <span>Add</span>
+                    </button>
+                </div>
+                <div>
+                    <ul>
+                        {items.map((item) => (
+                            <ToDoItem
+                            text={item}/>
+                        ))}
+                    </ul>
+                </div>
             </div>
     );
 }
