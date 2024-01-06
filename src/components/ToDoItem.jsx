@@ -11,12 +11,8 @@ function ToDoItem(props){
     //     });
     // }
 
-    function handleClick(){
-
-    }
-
     return (
-        <div onClick={handleClick}>
+        <div onClick={props.onChecked}>
             {/* <li style={{textDecoration: isDone ? "line-through" : "none"}}> */}
             <li>
                 {props.text}

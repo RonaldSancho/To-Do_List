@@ -18,6 +18,12 @@ function App(){
         setInputText("");
     }
 
+    function deteleItem(){
+        setItems((prevItems) => {
+
+        })
+    }
+
     return (
             <div className="container">
                 <div className="heading">
@@ -31,9 +37,13 @@ function App(){
                 </div>
                 <div>
                     <ul>
-                        {items.map((item) => (
+                        {items.map((item, index) => (
                             <ToDoItem
-                            text={item}/>
+                            key={index}
+                            id={index}
+                            text={item}
+                            onChecked={deteleItem}
+                            />
                         ))}
                     </ul>
                 </div>
